@@ -1,0 +1,61 @@
+
+.addBtn{
+    position: 'relative';
+    left: 920px;
+    top: 60px;
+}
+body{
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+.card{
+    
+    margin: 20px 0 10px;
+    text-align: center;
+}
+.contacts{
+    padding: 20px 550px;
+    display: flex;
+    flex-direction: column;
+}
+.find{
+    width: 200px;
+    padding: 2px;
+    position: absolute;
+    top: 15px;
+    left: 1200px;
+    border: solid 1px #fff;
+    color: #fff;
+}
+.formControl{
+    padding: 100px 500px 400px;
+    
+}
+.hr{
+    border: dotted #ddd;
+    border-bottom: none;
+    width: 20%;
+    margin-bottom: 10px;
+    
+}
+.login{
+    padding: 30px 50px 40px;
+    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    text-align: center;
+}
+.newContact{
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: dotted 1px #888888;
+}
+.myBtn{
+    margin-Top: 25px;
+    display: flex;
+    flex-direction: column;
+}
