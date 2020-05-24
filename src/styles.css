@@ -38,6 +38,10 @@ body{
     margin-bottom: 10px;
     
 }
+html{
+    background-color: #f1f9f9;
+    height: 100%;
+}
 .login{
     padding: 30px 50px 40px;
     /* align-items: center; */

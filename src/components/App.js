@@ -52,7 +52,7 @@ export default class App extends React.Component{
     }
     render () {
     return (
-        <div style={{backgroundColor: '#f1f9f9'}}>
+        <div>
         <MuiThemeProvider theme={theme}>
         <AppBar className='bar' position="static">
         <Toolbar>

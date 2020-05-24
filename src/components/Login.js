@@ -29,7 +29,7 @@ export default function Login(props) {
         <div className='login'>
         {props.failed && <Typography style={{marginBottom:30}} color='error' variant='body1'>Incorrect Username or Password</Typography>}
             <FormControl style={{marginBottom: 20}}>
-                <Input onChange={handleUserNameChange} inputProps={{ style: {textAlign: 'center'} }} placeholder='Email address' type="email" name='email' id="email" required={true} />
+                <Input onChange={handleUserNameChange} inputProps={{ style: {textAlign: 'center'} }} placeholder='Username' type="email" name='email' id="email" required={true} />
             </FormControl>
             <FormControl style={{marginBottom: 20}}>
                 <Input onChange={handlePasswordChange} inputProps={{ style: {textAlign: 'center'} }}  placeholder='Password' type="password" id="psswd" required={true} />

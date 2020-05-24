@@ -11,6 +11,7 @@ export default function Contacts() {
         name: '',
         phone: '',
     })
+    const [filtered,setFiltered]=useState(false)
     const [contacts, setContacts] = useState({
         list: [...randomContacts]
     })
@@ -29,6 +30,13 @@ export default function Contacts() {
         setContacts({
             list: arr
         });
+        const arrShown = shownContacts.list
+        const findElem2 = (x) => { return x.key === contact.key }
+        const prevItem2 = arrShown.find(findElem2)
+        const index2 = arrShown.findIndex(findElem2)
+        arrShown[index2] = { key: prevItem2.key, name: prevItem2.name, phone: prevItem2.phone, edit: true }
+        setShownContacts({
+            list: arrShown})
         setNewContact({
             name: prevItem.name,
             phone: prevItem.phone,
@@ -39,6 +47,10 @@ export default function Contacts() {
         setContacts({
             list: arr
         });
+        const arrFiltered = shownContacts.list.filter((x) => { return x.key !== contact.key })
+        setShownContacts({
+            list: arrFiltered
+        })
     }
     function submitChanges(contact) {
         const arr = contacts.list
@@ -49,6 +61,13 @@ export default function Contacts() {
         setContacts({
             list: arr
         });
+        const arrShown = shownContacts.list
+        const findElem2 = (x) => { return x.key === contact.key }
+        const prevItem2 = arrShown.find(findElem2)
+        const index2 = arrShown.findIndex(findElem2)
+        arrShown[index2] = { key: prevItem2.key, name: newContact.name, phone: newContact.phone, edit: false }
+        setShownContacts({
+            list: arrShown})
         setNewContact({
             name: '',
             phone: '',
@@ -56,11 +75,13 @@ export default function Contacts() {
     }
     function addContact() {
         const arr = [{ name: newContact.name, phone: newContact.phone, edit: false, key: contacts.list.length }, ...contacts.list]
+        const arrShown = [{ name: newContact.name, phone: newContact.phone, edit: false, key: contacts.list.length }, ...shownContacts.list]
         console.log(arr)
         setContacts({
             list: arr
         })
-        setShownContacts({list: arr})
+        setShownContacts({
+            list: arrShown})
         setAddNewContact(!addNewContact);
     }
     function handleContactChange(event) {
@@ -77,7 +98,13 @@ export default function Contacts() {
         const val = event.target.value.toLowerCase()
         const arr = contacts.list.filter(x => { return x.name.toLowerCase().includes(val) })
         
-        val.length ? setShownContacts({list: arr}) : setShownContacts({list: contacts.list})
+        if (val.length) {
+            setShownContacts({list: arr})
+            setFiltered(true)
+        } else{ 
+            setShownContacts({list: contacts.list})
+            setFiltered(false)
+        }
     }
     return (
         <div>
