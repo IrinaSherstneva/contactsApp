@@ -1,19 +1,16 @@
+Login page (Express server with mock login data) and contacts page (React) that is shown after login.
 
-Приложение личного кабинета
-
-Чтобы запустить приложение, после скачивания необходимо находясь в терминале в папке contactsApp-master  выполнить следующие команды:
+To run the app execute in terminal 
  
 $ npm i
 
 $ node server.js
 
-Затем в браузере ввести http://localhost:5000/login
-
-В отдельной вкладке терминала, также перейдя в contactsApp-master, выполнить:
+In a separate terminal tab run 
 
 $ npm start
 
-Приложение должно открыться в браузере автоматически. Для логина нужно ввести
+The app should open in the browser automatically. Login data:
 
 Username: admin
 Password: 1234
